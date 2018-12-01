@@ -1,3 +1,26 @@
-<p>
-  login works!
-</p>
+<div class="conatiner">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-2">
+            <form [formGroup]="loginForm" (ngSubmit)="onSbumit()">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" formControlName="email" id="email">
+                    <div *ngIf="submitted && loginForm.controls.email.errors" class="error">
+                        <div class="loginForm.controls.email.errors.required">Email required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" formControlName="password" id="password">
+                    <div *ngIf="submitted && loginForm.controls.password.errors" class="error">
+                        <div *ngIf="loginForm.controls.password.errors.required">Passwrod required</div>
+                    </div>
+                </div>
+                <button class="btn btn-default">login</button>
+                <div *ngIf="invalidLogin" class="error">
+                    <div>Invalid login details</div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
