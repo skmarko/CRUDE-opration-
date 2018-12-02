@@ -9,6 +9,8 @@ import { from } from 'rxjs';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  email:string;
+  password:string;
 loginForm:FormGroup;
 sumitted:boolean=false;
 invalidLogin:boolean=false;
